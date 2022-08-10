@@ -1,16 +1,17 @@
 ---
 titlepage: true
+toc: true
 toc-own-page: true
-title: "Service specification for XYZ service"
+title: "Service specification for the MCP Service Registry Global Ledger"
 author: [MCP Consortium]
-date: "2021-04-21"
-keywords: [Maritime technical service, MCP, Service registry]
+date: "2022-08-10"
+keywords: [Maritime technical service, MCP, Service registry, global ledger]
 logo: "materials/mcplogo.png"
 titlepage-text-color: "476E7D"
 footer-center: "G1128 Service Specification"
 ...
 
-# Service specification for XYZ service
+# Service specification for the MCP Service Registry Global Ledger
 <!-- Hey it is comment! This must be seen only at the source code editing.  -->
 
 ## Introduction
@@ -86,14 +87,14 @@ The purpose of this section is to provide a unique identification of the service
 <!-- Table below shall be completed. -->
 
 Attribute | Content
---- | ---
-Name | Service name
-ID | Unique identity, e.g. in form of an MRN (Maritime Resource Name)
-Version | Version of the XYZ service specification
-Description | Description of the XYZ service
-Keywords | Keywords that can be used to find the service in the service catalogue and taxonomy
-Architect(s) | Name of service architects and their organisation
-Status | Status of the service in the engineering lifecycle – either ‘Provisional’, ‘Released’, ‘Deprecated’ or ‘Deleted’. ‘Provisional’ - the service necessity has been identified, and a short description is available, but the full-service specification is not yet ready. ‘Released’ - the full-service specification is ready. ‘Deprecated’ - service specification is announced to become invalid in the near future. ‘Deleted’ - service specification is not valid any more.
+-- | ----
+Name | Maritime Service Registry Global Ledger
+ID | urn:mrn:mcp:service:mcc:mcc:specification:msr-ledger
+Version | 0.0.1
+Description | A global ledger acting as a reference point to provide metadata about where to find the information on services instances that are registered in different Maritime Service Registries.
+Keywords | service, registry, discoverability, specification, G-1128, technical, global, ledger
+Architect(s) | MCC MSR WG
+Status | Provisional
 
 ## Operational context
 
