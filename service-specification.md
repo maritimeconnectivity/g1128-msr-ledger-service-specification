@@ -254,7 +254,7 @@ This section describes the information model, i.e., the logical data structures 
 It is recommended to visualise the data structures by using UML diagrams.  The full information model (logical data structure) shall be shown using diagram(s) and explanatory tables (see below).
 -->
 
-Example of an UML diagram:
+![UML class diagram of data model](materials/msr-ledger.drawio.svg){ width=300px }
 
 <!--
 It is mandatory to give a description of each entity item (class), its attributes and the associations between entity items after each diagram showing data items.
@@ -280,14 +280,15 @@ Architectural elements applicable for this description are:
 * Parameters - constants or variables passed into or out of a Service interface as part of the execution of an Operation.
 A Service may have one or more Service Interfaces.  Please describe each in separate sections below.
 -->
-## Service interface <INTERFACE NAME>
+
+## Service interface INTERFACE NAME
 <!--
 Please explain the purpose, message exchange pattern and architecture of the Interface.
 A Service Interface supports one or several service operations.  Each operation in the service interface shall be described in the following sections.
 -->
 A description should be given.
 
-### Operation <OPERATION NAME>
+### Operation OPERATION NAME
 <!--
 Give an overview of the operation: Include here a textual description of the operation functionality. In most situations this will be the same as the operation description taken from the UML modelling tool.
 -->
@@ -324,7 +325,7 @@ Following types of views and UML diagrams can be used to describe the dynamic be
 -->
 A description should be given.
 
-## Service interface <INTERFACE NAME>
+## Service interface INTERFACE NAME
 <!--
 Include some information about the dynamic aspects of the service interface; each operation shall be exposed on at least one diagram.
 An example sequence diagram is shown in Figure 4.
