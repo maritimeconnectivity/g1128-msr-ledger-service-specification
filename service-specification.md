@@ -12,8 +12,34 @@ footer-center: "G1128 Service Specification"
 ...
 
 # Introduction
+The International Maritime Organization (IMO) in its 'Strategy for the
+development and  implementation of e‐Navigation' (MSC85/26, Annex 20) [1]
+resolution, provides the following definition of e‐Navigation:
 
-A description should be given.
+***E-Navigation, is the harmonised collection, integration, exchange,
+presentation and analysis of maritime information on-board and ashore by
+electronic means to enhance berth-to-berth navigation and related services, for
+safety and security at sea and protection of the marine environment.***
+
+In IMO resolution MSC.467(101) “Guidance on the Definition and Harmonization of
+the Format and Structure of Maritime Services in the Context of e-Navigation”
+[2], IMO defines Maritime Services and Technical Services in the context of
+e-Navigation. In this resolution, the Maritime Services are on the highest 
+level, describing a service in an entirely non-technical manner. One or more
+Technical Services are associated with a Maritime Service, and these Technical
+Services are the ones defining the actual information exchange needed to take
+place in order to carry our a Maritime Service.
+
+The MCP Service Registry [3] service, or MSR for short, assumes the role of a
+general registry for Technical Services. It provides a reference point to the
+most relevant information and the respective end-points of the registered
+services and thus to improve the accessibility of available services in the
+maritime domain.
+
+The Technical Services in the resolution are defined on three levels following
+the same structure as in IALA G-1128 [4] guideline. The MSR supervises all
+service providers to describe their service in the format of G-1128. MSR contains service information from those the three levels to facilitate the service discoverability,
+but services without the G-1128 documentation also can be registered.
 
 ## Purpose
 <!--
