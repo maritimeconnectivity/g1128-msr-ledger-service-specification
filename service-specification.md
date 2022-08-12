@@ -152,9 +152,9 @@ The service must be linked to at least one requirement.  At least one of the fol
 ### Functional requirements
 Requirement Id | Requirement Name | Requirement Text | References
 --- | --- | --- | ---
-MSR-FR001 | something | something | something
-MSR-FR002 | something | something | something
-MSR-FR003 | something | something | something
+MSR-FR001 | Service Reference Registration | Allow the registration of a new reference to a service instance and the MSR that it is registered in. | MCC MSR WG
+MSR-FR002 | Service Reference Update | Allow updates of existing service instance references. | MCC MSR WG
+MSR-FR003 | Global Service Discoverability | Allow services to be globally discoverable across several different MSRs. | MCC MSR WG
 
 #### Requirement definitions - XYZ-FR001
 Requirement Id | Requirement Name
@@ -183,8 +183,8 @@ Author |
 ### Non-functional requirements
 Requirement Id | Requirement Name | Requirement Text | References
 --- | --- | --- | ---
-MSR-NFR001 | something | something | something
-MSR-NFR002 | something | something | something
+MSR-NFR001 | Authenticity | The service consumer must be able to verify the authenticity of the received data. | MCC MSR WG
+MSR-NFR002 | Integrity | The service consumer must be able to verify that the received data has not been tampered with. | MCC MSR WG
 MSR-NFR003 | something | something | something
 
 #### Requirement definitions - XYZ-NFR001
