@@ -9,11 +9,13 @@ keywords: [Maritime technical service, MCP, Service registry, global ledger]
 logo: "materials/mcplogo.png"
 titlepage-text-color: "476E7D"
 footer-center: "G1128 Service Specification"
+bibliography: references.yml
+csl: acm.csl
 ...
 
 # Introduction
 The International Maritime Organization (IMO) in its 'Strategy for the
-development and  implementation of e‐Navigation' (MSC85/26, Annex 20) [1]
+development and  implementation of e‐Navigation' (MSC85/26, Annex 20) [@IMO-ENAV1]
 resolution, provides the following definition of e‐Navigation:
 
 ***E-Navigation, is the harmonised collection, integration, exchange,
@@ -23,7 +25,7 @@ safety and security at sea and protection of the marine environment.***
 
 In IMO resolution MSC.467(101) “Guidance on the Definition and Harmonization of
 the Format and Structure of Maritime Services in the Context of e-Navigation”
-[2], IMO defines Maritime Services and Technical Services in the context of
+[@IMO-ENAV2], IMO defines Maritime Services and Technical Services in the context of
 e-Navigation. In this resolution, the Maritime Services are on the highest 
 level, describing a service in an entirely non-technical manner. One or more
 Technical Services are associated with a Maritime Service, and these Technical
@@ -37,7 +39,7 @@ services and thus to improve the accessibility of available services in the
 maritime domain.
 
 The Technical Services in the resolution are defined on three levels following
-the same structure as in IALA G-1128 [4] guideline. The MSR supervises all
+the same structure as in IALA G-1128 [@g1128] guideline. The MSR supervises all
 service providers to describe their service in the format of G-1128. MSR contains service information from those the three levels to facilitate the service discoverability,
 but services without the G-1128 documentation also can be registered.
 
@@ -67,9 +69,9 @@ Note that the service specification is intended to be technology-agnostic.  The 
 This section shall be replaced by a suitable description of the purpose.  For instance:
 -->
 
-The purpose of this service specification document is to provide a holistic overview of the XYZ service and its building blocks in a technology-independent way, according to the guidelines given in [1].  It describes a well-defined baseline of the service by clearly identifying the service version.
+The purpose of this service specification document is to provide a holistic overview of the MCP Service Registry Global Ledger service and its building blocks in a technology-independent way, according to the guidelines given in [@g1128]. It describes a well-defined baseline of the service by clearly identifying the service version.
 
-The aim is to document the key aspects of the XYZ service at the logical level:
+The aim is to document the key aspects of the MCP Service Registry Global Ledger service at the logical level:
 
 * the operational and business context of the service;
   * requirements for the service (e.g. information exchange requirements);
@@ -93,7 +95,7 @@ The aim is to document the key aspects of the XYZ service at the logical level:
 This service specification template is intended to be read by service architects who shall produce service A description.
 This section shall describe the intended readers. e.g.: -->
 
-This service specification is intended to be read by service architects, system engineers and developers in charge of designing and developing an instance of the XYZ service.
+This service specification is intended to be read by service architects, system engineers and developers in charge of designing and developing an instance of the MCP Service Registry Global Ledger service.
 
 Furthermore, this service specification is intended to be read by enterprise architects, service architects, information architects, system engineers and developers in pursuing architecting, design and development activities of other related services.
 
@@ -115,7 +117,7 @@ Name | Maritime Service Registry Global Ledger
 ID | urn:mrn:mcp:service:mcc:mcc:specification:msr-ledger
 Version | 0.0.1
 Description | A global ledger acting as a reference point to provide metadata about where to find the information on services instances that are registered in different Maritime Service Registries.
-Keywords | service, registry, discoverability, specification, G-1128, technical, global, ledger
+Keywords | service, registry, discoverability, specification, G-1128, technical, global, ledger, distributed
 Architect(s) | MCC MSR WG
 Status | Provisional
 
@@ -385,9 +387,3 @@ MIR | Maritime Identity Registry
 MRN | Maritime Resource Name
 
 # References
-<!--
-This section shall include all references used when designing the service.  Specifically, the applicable steering and requirements documents shall be listed.
--->
-1. IALA Guideline - G1128 THE SPECIFICATION OF e-NAVIGATION TECHNICAL SERVICES
-2. http://mrnregistry.org/
-3. S-100 Universal Hydrographic Data Model, http://www.iho.int/iho_pubs/standard/S-100/S-100_Ed_2/S_100_V2.0.0_June-2015.pdf

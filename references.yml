@@ -1,0 +1,16 @@
+references:
+  - type: publication
+    id: IMO-ENAV1
+    author: International Maritime Organization
+    title: "IMO Resolution MSC.85/26 - Strategy for the development and implementation of e-Navigation, Annex 20"
+    URL: https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/enavigation/MSC%2085%20-%20annex%2020%20-%20Strategy%20for%20the%20development%20and%20implementation%20of%20e-nav.pdf
+  - type: publication
+    id: IMO-ENAV2
+    author: International Maritime Organization
+    title: "IMO Resolution MSC.467(101) - Guidance on the Definition and Harmonization of the Format and Structure of Maritime Services in the Context of e-Navigation"
+    URL: https://wwwcdn.imo.org/localresources/en/KnowledgeCentre/IndexofIMOResolutions/MSCResolutions/MSC.467%28101%29.pdf
+  - type: publication
+    id: g1128
+    author: International Association of Marine Aids to Navigation and Lighthouse Authorities
+    title: "IALA Guideline - G1128 The Specification of e-Navigation Technical Services"
+    URL: https://www.iala-aism.org/product/g1128-specification-e-navigation-technical-services/ 
