@@ -111,15 +111,15 @@ The purpose of this section is to provide a unique identification of the service
 
 <!-- Table below shall be completed. -->
 
-Attribute | Content
--- | ----
-Name | Maritime Service Registry Global Ledger
-ID | urn:mrn:mcp:service:mcc:mcc:specification:msr-ledger
-Version | 0.0.1
-Description | A global ledger acting as a reference point to provide metadata about where to find the information on services instances that are registered in different Maritime Service Registries.
-Keywords | service, registry, discoverability, specification, G-1128, technical, global, ledger, distributed
+Attribute    | Content
+--           | ----
+Name         | Maritime Service Registry Global Ledger
+ID           | urn:mrn:mcp:service:mcc:mcc:specification:msr-ledger
+Version      | 0.0.1
+Description  | A global ledger acting as a reference point to provide metadata about where to find the information on services instances that are registered in different Maritime Service Registries.
+Keywords     | service, registry, discoverability, specification, G-1128, technical, global, ledger, distributed
 Architect(s) | MCC MSR WG
-Status | Provisional
+Status       | Provisional
 
 # Operational context
 
