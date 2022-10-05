@@ -32,7 +32,7 @@ Technical Services are associated with a Maritime Service, and these Technical
 Services are the ones defining the actual information exchange needed to take
 place in order to carry our a Maritime Service.
 
-The MCP Service Registry [3] service, or MSR for short, assumes the role of a
+The MCP Service Registry [@msr] service, or MSR for short, assumes the role of a
 general registry for Technical Services. It provides a reference point to the
 most relevant information and the respective end-points of the registered
 services and thus to improve the accessibility of available services in the
@@ -44,50 +44,8 @@ service providers to describe their service in the format of G-1128. MSR contain
 but services without the G-1128 documentation also can be registered.
 
 ## Purpose
-<!--
-This template shall support the service architects in creating a description of the services (put down in writing) at a high level of abstraction, following the guidelines given in [1].  The template provides for each section descriptive instructions for the intended content.  Formally, such instructions are written in blue italic font – they shall be deleted when writing the actual service specification document.  In addition, some parts of this template provide suggested text fragments that may be directly re-used in the service specification document. Such proposed text fragments are given below.
 
-The purpose of the service specification document is to write down the results of service identification and service design activities. The aim is to document the key aspects of a dedicated service at the logical level:
-* the operational and business context of the service;
-  * requirements for the service (e.g. information exchange requirements);
-  * involved nodes: which operational components provide/consume the service;
-  * operational activities supported by the service;
-  * relation of the service to other services:
-* the service description;
-  * service interface definitions;
-  * service interface operations;
-  * service payload definition;
-* service provision and validation aspects.
-
-This service specification document describes just one dedicated service in detail at logical level. In addition, there shall exist a service portfolio document, which presents all services of the maritime cloud that are available (or are planned to become available) at a higher level.
-
-The purpose of this service specification document is to provide a holistic overview of one service and its building blocks at logical level.  It may be complemented by a model based description (e.g. UML model describing the service interfaces, operations and data structures).  The service specification document describes a well-defined baseline of the service and clearly identifies the service version.  In this way, it supports the configuration management process.
-
-The service specification document provides also the foundation material for the future standardisation process.
-
-Note that the service specification is intended to be technology-agnostic.  The service specification document shall not describe the details of a specific service implementation. For that purpose, a service instance description shall be provided, where the realisation of the service with a dedicated technology shall be described.
-This section shall be replaced by a suitable description of the purpose.  For instance:
--->
-
-The purpose of this service specification document is to provide a holistic overview of the MCP Service Registry Global Ledger service and its building blocks in a technology-independent way, according to the guidelines given in [@g1128]. It describes a well-defined baseline of the service by clearly identifying the service version.
-
-The aim is to document the key aspects of the MCP Service Registry Global Ledger service at the logical level:
-
-* the operational and business context of the service;
-  * requirements for the service (e.g. information exchange requirements);
-  * involved nodes: which operational components provide/consume the service;
-  * operational activities supported by the service;
-  * relation of the service to other services;
-* the service description;
-  * service interface definitions;
-  * service interface operations;
-  * service payload definition;
-  * service dynamic behaviour description.
-* service provision and validation aspects
-
-![service management concept](materials/example.png)
-
-*an example figure*
+The MSR Gl
 
 ## Intended readership
 
@@ -382,8 +340,12 @@ Persons producing the Technical Service are invited to add definitions to the fo
 
 Term | Definition
 --- | ---
-MSR | Maritime Service Registry
+IALA | International Association of Marine Aids to Navigation and Lighthouse Authorities
+IMO | International Maritime Organization
+MCC | Maritime Connectivity Platform Consortium
+MCP | Maritime Connectivity Platform
 MIR | Maritime Identity Registry
 MRN | Maritime Resource Name
+MSR | Maritime Service Registry
 
 # References
