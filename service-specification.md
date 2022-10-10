@@ -231,6 +231,7 @@ It is also recommended to describe the considerations resulting in the selection
 A service interface supports one or several service operations. Depending on the message exchange pattern, service operations are either to be implemented by the service provider (e.g. in a Request/Response MEP, query operations are provided by the service provider – the service consumer uses them in order to submit query requests to the service provider), or by the service consumer (e.g. in a Publish/Subscribe MEP, publication operations are provided by the service consumer – the service provider uses them to submit publications to the service consumer). This distinction shall be clearly visualised in a service interface table (see example below): for each service interface, it shall be stated whether it is either provided or used by the Service. A service provides at least one service interface.
 An example diagram and corresponding table is given below.
 -->
+![MSR Global Ledger Interface Definition Diagram](materials/Service-Interfaces.svg)
 A description should be given.
 
 # Service data model
@@ -339,13 +340,13 @@ The definitions of terms used in this IALA Guideline can be found in the Interna
 Persons producing the Technical Service are invited to add definitions to the following list as appropriate.
 
 Term | Definition
---- | ---
+---  | ---
 IALA | International Association of Marine Aids to Navigation and Lighthouse Authorities
-IMO | International Maritime Organization
-MCC | Maritime Connectivity Platform Consortium
-MCP | Maritime Connectivity Platform
-MIR | Maritime Identity Registry
-MRN | Maritime Resource Name
-MSR | Maritime Service Registry
+IMO  | International Maritime Organization
+MCC  | Maritime Connectivity Platform Consortium
+MCP  | Maritime Connectivity Platform
+MIR  | Maritime Identity Registry
+MRN  | Maritime Resource Name
+MSR  | Maritime Service Registry
 
 # References
