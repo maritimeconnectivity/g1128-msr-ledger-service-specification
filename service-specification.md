@@ -240,7 +240,7 @@ This section describes the information model, i.e., the logical data structures 
 It is recommended to visualise the data structures by using UML diagrams.  The full information model (logical data structure) shall be shown using diagram(s) and explanatory tables (see below).
 -->
 
-![UML class diagram of data model](materials/msr-ledger.drawio.svg){ width=300px }
+![UML class diagram of data model](materials/msr-ledger-data-model.svg){ width=500px }
 
 <!--
 It is mandatory to give a description of each entity item (class), its attributes and the associations between entity items after each diagram showing data items.
