@@ -257,11 +257,6 @@ If the service data model is related to an external data model (e.g. being a sub
 
 The table below is an example for describing a service data model including traces to an external model.
 -->
-## Service internal data model (Optional)
-<!--
-Optionally, this section may provide a description of the internal data model, as it seems appropriate to the service provider and/or the service consumer side.  Such description might be helpful for the better understanding as it provides additional information about the building of the service.  However, it should be considered just as an example – it is not an authoritative part of the service specification.
--->
-A description should be given.
 
 # Service interface specifications
 This section describes the details of each service interface. One sub-section is provided for each Service Interface.
@@ -275,24 +270,25 @@ Architectural elements applicable for this description are:
 A Service may have one or more Service Interfaces.  Please describe each in separate sections below.
 -->
 
-## Service interface INTERFACE NAME
+## Service interface *MsrAdminInterface*
 <!--
 Please explain the purpose, message exchange pattern and architecture of the Interface.
 A Service Interface supports one or several service operations.  Each operation in the service interface shall be described in the following sections.
 -->
-A description should be given.
+The *MsrAdminInterface* interface is used by administrators to add MSRs that should be allowed to register service instances in the ledger and also to them again if their privilege should be revoked for one reason or another.
 
-### Operation OPERATION NAME
+### Operation *addMsr*
 <!--
 Give an overview of the operation: Include here a textual description of the operation functionality. In most situations this will be the same as the operation description taken from the UML modelling tool.
 -->
-A description should be given.
+The purpose of the *addMsr* operation is to allow administrators of the MSR Global Ledger to add MSR instances to the MSR Global Ledger's internal index of MSRs and at the same time give the added MSR instances permission to register service instances.
 
 #### Operation functionality
 <!--
 Describe the functionality of the operation, i.e. how does it produce the output from the input payload.
 -->
-A description should be given.
+Upon receiving a request to add an MSR from a user, the MSR Ledger will first check if the user has the administrative permissions to do so. If the user does not have the necessary permissions, the MSR Ledger will stop execution and optionally return a response with the failure reason to the user.
+If the user does have the necessary permissions, the MSR Ledger will create a representation of the MSR using the given the information, create an entry that maps from the given address of the MSR to the created representation in its internal index of MSRs and assign permissions for creating and updating service instances to the added MSR.
 
 #### Operation parameters
 <!--
@@ -304,7 +300,15 @@ Figure 3 shows an example of a UML diagram (subset of the service data model, re
 It is mandatory to provide a table with a clear description of each service operation parameter and the information about which data types defined in the service data mode are used by the service operation in its input and output parameters.
 Note: While the descriptions provided in the service data model shall explain the data types in a neutral format, the descriptions provided here shall explicitly explain the purpose of the parameters for the operation.
 -->
-A description should be given.
+| Parameter | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| name | string | 1 | The name of the MSR that is to be added |
+| url | string | 1 | The URL of the API of the MSR that is to be added |
+| account | address | The account in the MSR Ledger of the MSR that is to be added |
+
+| Return Type (out) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| result from operation | none \| string | 1 | The result of the add operation. Will be empty if successful, else it will contain the failure reason as a string |
 
 # Service dynamic behaviour
 <!--
