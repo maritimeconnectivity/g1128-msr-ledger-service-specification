@@ -231,8 +231,15 @@ It is also recommended to describe the considerations resulting in the selection
 A service interface supports one or several service operations. Depending on the message exchange pattern, service operations are either to be implemented by the service provider (e.g. in a Request/Response MEP, query operations are provided by the service provider – the service consumer uses them in order to submit query requests to the service provider), or by the service consumer (e.g. in a Publish/Subscribe MEP, publication operations are provided by the service consumer – the service provider uses them to submit publications to the service consumer). This distinction shall be clearly visualised in a service interface table (see example below): for each service interface, it shall be stated whether it is either provided or used by the Service. A service provides at least one service interface.
 An example diagram and corresponding table is given below.
 -->
+This section describes the interfaces of the service including the selected Message Exchange Pattern (MEP) by using UML diagrams that illustrate the service interfaces definitions and operations and in tabular form.
+
 ![MSR Global Ledger Interface Definition Diagram](materials/Service-Interfaces.svg)
-A description should be given.
+
+Service Interface | Role (from service provider point of view) | Service Operation
+| --- | --- | --- |
+| MsrAdminInterface        | Provided | addMsr \newline deleteMsr |
+| MsrInterface             | Provided | registerServiceInstance \newline changeInstanceStatus |
+| ServiceConsumerInterface | Provided | getMsrs \newline getServiceInstance \newline getServiceInstances \newline getServiceInstancesByKeyword \newline getServiceInstancesByDesign |
 
 # Service data model
 This section describes the information model, i.e., the logical data structures to be exchanged between providers and consumers of the service.

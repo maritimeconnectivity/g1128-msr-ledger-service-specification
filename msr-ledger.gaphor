@@ -3082,7 +3082,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </Class>
 <ClassItem id="63506ddd-48a1-11ed-8f79-ff7f0007bcc7">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 443.8515319824219, 734.890625)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 443.8515319824219, 734.1871127343869)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -3249,7 +3249,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="634f6f9d-48a1-11ed-aec9-ff7f0007bcc7"/>
 </class_>
 <name>
-<val>registerServiceInstance</val>
+<val>getServiceInstancesByDesign</val>
 </name>
 <ownedParameter>
 <reflist>
@@ -3264,13 +3264,13 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>in</val>
 </direction>
 <name>
-<val>instance</val>
+<val>designMRN</val>
 </name>
 <ownerFormalParam>
 <ref refid="19dd4cd4-48a2-11ed-97b2-ff7f0007bcc7"/>
 </ownerFormalParam>
 <typeValue>
-<val>ServiceInstance</val>
+<val>string</val>
 </typeValue>
 </Parameter>
 <Parameter id="19e28763-48a2-11ed-9317-ff7f0007bcc7">
@@ -3278,13 +3278,13 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>in</val>
 </direction>
 <name>
-<val>keywords</val>
+<val>designVersion</val>
 </name>
 <ownerFormalParam>
 <ref refid="19dd4cd4-48a2-11ed-97b2-ff7f0007bcc7"/>
 </ownerFormalParam>
 <typeValue>
-<val>List&lt;string&gt;</val>
+<val>string</val>
 </typeValue>
 </Parameter>
 <Parameter id="21b88dce-48a2-11ed-a46a-ff7f0007bcc7">
@@ -3441,7 +3441,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 1413.73828125, 294.1502832045484)</val>
 </matrix>
 <points>
-<val>[(-1.38671875, 24.908295286662565), (-1.38671875, 516.0368295298385), (-300.8867492675781, 516.0368295298385)]</val>
+<val>[(-1.38671875, 24.908295286662565), (-1.38671875, 515.3333172642255), (-300.8867492675781, 515.3333172642255)]</val>
 </points>
 <head-connection>
 <ref refid="add9bd46-48a3-11ed-9932-ff7f0007bcc7"/>
@@ -3560,7 +3560,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 164.12501525878906, 807.4051235378644)</val>
 </matrix>
 <points>
-<val>[(50.75389862060547, 8.784961363206548), (50.75389862060547, 13.040931461913146), (279.7265167236328, 13.040931461913146)]</val>
+<val>[(50.75389862060547, 8.784961363206548), (50.75389862060547, 12.337419196300061), (279.7265167236328, 12.337419196300061)]</val>
 </points>
 <head-connection>
 <ref refid="35814320-48a4-11ed-b4c8-ff7f0007bcc7"/>
@@ -3755,7 +3755,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 161.75782775878906, 547.8573144545484)</val>
 </matrix>
 <points>
-<val>[(-12.51171875, 35.9121862778735), (-12.51171875, 213.0703125), (282.0937042236328, 213.0703125)]</val>
+<val>[(-12.51171875, 35.9121862778735), (-12.51171875, 212.36680023438691), (282.0937042236328, 212.36680023438691)]</val>
 </points>
 <head-connection>
 <ref refid="561e51d7-48a4-11ed-a99e-ff7f0007bcc7"/>
