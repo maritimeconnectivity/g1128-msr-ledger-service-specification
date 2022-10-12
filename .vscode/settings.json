@@ -1,0 +1,4 @@
+{
+    "pandoc.pdfOptString": "-s --from=markdown --template=eisvogel --number-sections --data-dir=public/ --citeproc",
+    "pandoc.render.openViewer": false
+}
