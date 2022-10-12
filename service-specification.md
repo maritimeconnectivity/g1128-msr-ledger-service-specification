@@ -14,6 +14,7 @@ csl: acm.csl
 ...
 
 # Introduction
+
 The International Maritime Organization (IMO) in its 'Strategy for the
 development and  implementation of e‐Navigation' (MSC85/26, Annex 20) [@IMO-ENAV1]
 resolution, provides the following definition of e‐Navigation:
@@ -110,29 +111,15 @@ The service must be linked to at least one requirement.  At least one of the fol
 -->
 
 ### Functional requirements
+
 Requirement Id | Requirement Name | Requirement Text | References
 --- | --- | --- | ---
 MSR-FR001 | Service Reference Registration | Allow the registration of a new reference to a service instance and the MSR that it is registered in. | MCC MSR WG
 MSR-FR002 | Service Reference Update | Allow updates of existing service instance references. | MCC MSR WG
 MSR-FR003 | Global Service Discoverability | Allow services to be globally discoverable across several different MSRs. | MCC MSR WG
 
-#### Requirement definitions - XYZ-FR001
-Requirement Id | Requirement Name
---- | ---
-Requirement Name |
-Requirement Text |
-Rationale |
-Author |
-
-#### Requirement definitions - XYZ-FR002
-Requirement Id | Requirement Name
---- | ---
-Requirement Name |
-Requirement Text |
-Rationale |
-Author |
-
 #### Requirement definitions - XYZ-FR003
+
 Requirement Id | Requirement Name
 --- | ---
 Requirement Name |
@@ -141,71 +128,12 @@ Rationale |
 Author |
 
 ### Non-functional requirements
+
 Requirement Id | Requirement Name | Requirement Text | References
 --- | --- | --- | ---
 MSR-NFR001 | Authenticity | The service consumer must be able to verify the authenticity of the received data. | MCC MSR WG
 MSR-NFR002 | Integrity | The service consumer must be able to verify that the received data has not been tampered with. | MCC MSR WG
 MSR-NFR003 | something | something | something
-
-#### Requirement definitions - XYZ-NFR001
-Requirement Id | Requirement Name
---- | ---
-Requirement Name |
-Requirement Text |
-Rationale |
-Author |
-
-#### Requirement definitions - XYZ-NFR002
-Requirement Id | Requirement XYZ
---- | ---
-Requirement Name |
-Requirement Text |
-Rationale |
-Author |
-
-#### Requirement definitions - XYZ-NFR003
-Requirement Id | Requirement Name
---- | ---
-Requirement Name |
-Requirement Text |
-Rationale |
-Author |
-
-## Other constraints
-
-### Relevant industrial standards
-<!--
-List in this section the relevant industrial standards (if any) for the exchange of this type of data and or this type of service.  These may include, for example, OGC, WFS, WMS, etc.
--->
-A description should be given.
-
-### Operational nodes
-<!--
-If an operational model exists in external documents, then this section just shows the Service to Nodes mapping by providing three tables, as described below.
-If no external operational model exists, then the relevant operational nodes and their context shall be briefly described here before listing them in the tables of service providers and consumers.
--->
-A description should be given.
-
-#### Operational nodes providing XYZ service
-Operational Node | Remarks
---- | ---
-something | something
-
-#### Operational nodes consuming XYZ service
-Operational Node | Remarks
---- | ---
-something | something
-
-### Operational activities (Optional)
-<!--
-Optional. If an operational model exists and provides sufficient details about operational activities, then this section shall include a mapping of the service to the relevant operational activities.
--->
-A description should be given.
-
-#### Operational activities supported by XYZ service
-Operational Node | Remarks
---- | ---
-something | something
 
 # Service overview
 <!--
@@ -242,6 +170,7 @@ Service Interface | Role (from service provider point of view) | Service Operati
 | ServiceConsumerInterface | Provided | getMsrs \newline getServiceInstance \newline getServiceInstances \newline getServiceInstancesByKeyword \newline getServiceInstancesByDesign |
 
 # Service data model
+
 This section describes the information model, i.e., the logical data structures to be exchanged between providers and consumers of the service.
 
 <!--
@@ -259,6 +188,7 @@ The table below is an example for describing a service data model including trac
 -->
 
 # Service interface specifications
+
 This section describes the details of each service interface. One sub-section is provided for each Service Interface.
 The Service Interface specification covers only the static design description while the dynamic design (behaviour) is described in section D 5.
 <!--
@@ -288,7 +218,7 @@ The purpose of the *addMsr* operation is to allow administrators of the MSR Glob
 Describe the functionality of the operation, i.e. how does it produce the output from the input payload.
 -->
 Upon receiving a request to add an MSR from a user, the MSR Ledger will first check if the user has the administrative permissions to do so. If the user does not have the necessary permissions, the MSR Ledger will stop execution and optionally return a response with the failure reason to the user.
-If the user does have the necessary permissions, the MSR Ledger will create a representation of the MSR using the given the information, create an entry that maps from the given address of the MSR to the created representation in its internal index of MSRs and assign permissions for creating and updating service instances to the added MSR.
+If the user does have the necessary permissions, the MSR Ledger will create an *Msr* object representation of the MSR using the given the information, create an entry that maps from the given address of the MSR to the created representation in its internal index of MSRs and assign permissions for creating and updating service instances to the added MSR.
 
 #### Operation parameters
 <!--
@@ -300,15 +230,173 @@ Figure 3 shows an example of a UML diagram (subset of the service data model, re
 It is mandatory to provide a table with a clear description of each service operation parameter and the information about which data types defined in the service data mode are used by the service operation in its input and output parameters.
 Note: While the descriptions provided in the service data model shall explain the data types in a neutral format, the descriptions provided here shall explicitly explain the purpose of the parameters for the operation.
 -->
-| Parameter | Encoding | Mult. | Description |
+| Parameter (in) | Encoding | Mult. | Description |
 | ------ | --- | --- | --------- |
 | name | string | 1 | The name of the MSR that is to be added |
 | url | string | 1 | The URL of the API of the MSR that is to be added |
-| account | address | The account in the MSR Ledger of the MSR that is to be added |
+| account | address | 1 | The account address in the MSR Ledger of the MSR that is to be added |
 
 | Return Type (out) | Encoding | Mult. | Description |
 | ------ | --- | --- | --------- |
 | result from operation | none \| string | 1 | The result of the add operation. Will be empty if successful, else it will contain the failure reason as a string |
+
+### Operation *deleteMsr*
+
+The purpose of the *deleteMsr* operation is to allow administrators of the MSR Global Ledger to delete previously added MSR instances from the internal index and also revoke their permission to register service instances.
+
+#### Operation functionality
+
+Upon receiving a request to add an MSR from a user, the MSR Ledger will first check if the MSR has the necessary permissions to do so. If the MSR does not have the necessary permissions, the MSR Ledger will stop execution and optionally return a response with the failure reason to the user.
+If the user does have the necessary permissions, the MSR Ledger will delete the MSR entry that maps from the given account address in its internal index and revoke the permissions of the MSR with the given account address.
+
+#### Operation parameters
+
+| Parameter (in) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| msrAddress | address | 1 | The account address of the MSR that is to be deleted |
+
+| Return Type (out) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| result from operation | none \| string | 1 | The result of the delete operation. Will be empty if successful, else it will contain the failure reason as a string |
+
+## Service Interface *MsrInterface*
+
+The *MsrInterface* interface is used by MSR instances, that have necessary permissions, to register and change the status of service instances.
+
+### Operation *registerServiceInstance*
+
+The purpose of the *registerServiceInstance* operation is to allow MSR instances that have the necessary permissions to register service instances in the MSR Global Ledger.
+
+#### Operation functionality
+
+Upon receiving a request to register a service instance from an MSR instance, the MSR Ledger will first check if the MSR has the necessary permissions to do so. If the MSR does not have the necessary permissions, the MSR Ledger will stop execution and optionally return a response with the failure reason to the MSR.
+If the MSR does have the necessary permissions, the MSR Ledger will update the received *ServiceInstance* object with the name and URL of the MSR that sent the request. Then the MSR Ledger will store the *ServiceInstance* object in its internal list of service instances and also index it according to the given list of keywords.
+
+#### Operation parameters
+
+| Parameter (in) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| instance | ServiceInstance | 1 | The service instance that should be registered |
+| keywords | string | 0..* | A list of keywords that the service instance should be indexed by |
+
+| Return Type (out) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| result from operation | none \| string | 1 | The result of the registering operation. Will be empty if successful, else it will contain the failure reason as a string |
+
+### Operation *changeInstanceStatus*
+
+The purpose of the *changeInstanceStatus* operation is to allow an MSR instance to update the status of a service instance it has previously registered.
+
+#### Operation functionality
+
+Upon receiving a request to change the status of an existing service instance, the MSR Ledger will check if the MSR has the necessary permissions to do so, and also that the MSR sending the request is the one that originally registered it. If any of these checks fail, the MSR Ledger will stop execution and optionally return a response with the failure reason to the MSR.
+If the checks succeed, the MSR Ledger will update the service instance in question with the given service status.
+
+#### Operation parameters
+
+| Parameter (in) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| instanceMrn | string | 1 | The MRN of the service instance that is to be updated |
+| instanceVersion | string | 1 | The version of the service instance that is to be updated |
+| status | InstanceStatus | 1 | The instance status that the service instance is to updated with |
+
+| Return Type (out) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| result from operation | none \| string | 1 | The result of the registering operation. Will be empty if successful, else it will contain the failure reason as a string |
+
+## Service interface *ServiceConsumerInterface*
+
+The *ServiceConsumerInterface* interface is used by service consumers to get the list of MSR instances that are registered and to get registered service instances.
+
+### Operation *getMsrs*
+
+The *getMsrs* operation allows service consumers to get the list MSR instances that are registered in the MSR Global Ledger.
+
+#### Operation functionality
+
+Upon receiving a request to get the list of MSR instances the MSR Ledger will return the list of MSR instances.
+
+#### Operation parameters
+
+| Parameter (in) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+
+| Return Type (out) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| Msr | binary | 0..* | The list of MSR instances that are registered in the MSR Global Ledger |
+
+### Operation *getServiceInstance*
+
+The *getServiceInstance* operation allows service consumers to get a service instance with a specific MRN and version.
+
+#### Operation functionality
+
+Upon receiving a request for getting a service instance, the MSR Global Ledger will look up in its list of service instances to find one with the given MRN and version. If no service instance was found, the MSR Ledger will return a *ServiceInstance* object where all attributes are empty.
+
+#### Operation parameters
+
+| Parameter (in) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| instanceMrn | string | 1 | The MRN of the service instance to be returned|
+| version | string | 1 | The version of the service instance to be returned |
+
+| Return Type (out) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| ServiceInstance | binary | 1 | The service instance that was found based on the given parameters |
+
+### Operation *getServiceInstances*
+
+The *getServiceInstances* operation allows service consumers to get the list of all service instances that are registered in the MSR Global Ledger.
+
+#### Operation functionality
+
+Upon receiving a request to get the list of service instances, the MSR Ledger will return the list of all registered service instances.
+
+#### Operation parameters
+
+| Parameter (in) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+
+| Return Type (out) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| ServiceInstance | binary | 0..* | The list of all service instances that are registered in the MSR Global Ledger |
+
+### Operation *getServiceInstancesByKeyword*
+
+The *getServiceInstancesByKeyword* operation allows service consumers to get the list of all registered service instance that have a given keyword.
+
+#### Operation functionality
+
+Upon receiving a request for getting service instances by a keyword, the MSR Global Ledger will look up in its index to find all service instances that have the given keyword in their lists of keywords. All the found service instances will be collected in a list which is then returned to the service consumer.
+
+#### Operation parameters
+
+| Parameter (in) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| keyword | string | 1 | The keyword that will be used to find service instances |
+
+| Return Type (out) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| ServiceInstance | binary | 0..* | The list that contains all the registered service instances that have the given keyword |
+
+### Operation *getServiceInstancesByDesign*
+
+The *getServiceInstancesByDesign* operation allows service consumers to get the list of service instances that implement a given service design. **MAKE REFERENCE TO G1128 HERE**
+
+#### Operation functionality
+
+Upon receiving a request to the list of service instances that implement a given service design, the MSR Global Ledger will look up in its index to find all service instances that implement the given service design. All the found service instances will be collected in a list which is then returned to the service consumer.
+
+#### Operation parameters
+
+| Parameter (in) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| designMRN | string | 1 | The MRN of the service design that the service instances implement |
+| designVersion | string | 1 | The version of the service design that the service instance implement |
+
+| Return Type (out) | Encoding | Mult. | Description |
+| ------ | --- | --- | --------- |
+| ServiceInstance | binary | 0..* | The list that contains all the registered service instances that implement the given design MRN and version |
 
 # Service dynamic behaviour
 <!--
@@ -345,9 +433,11 @@ This section shall describe the way services are planned to be provided and cons
 A description should be given.
 
 # Definitions
-The definitions of terms used in this IALA Guideline can be found in the International Dictionary of Marine Aids to Navigation (IALA Dictionary) at http://www.iala-aism.org/wiki/dictionary and were checked as correct at the time of going to print.  Where conflict arises, the IALA Dictionary shall be considered as the authoritative source of definitions used in IALA documents.
+
+The definitions of terms used in this document can be found in the International Dictionary of Marine Aids to Navigation (IALA Dictionary) at http://www.iala-aism.org/wiki/dictionary and were checked as correct at the time of going to print.  Where conflict arises, the IALA Dictionary shall be considered as the authoritative source of definitions used in IALA documents.
 
 ## Terminology
+
 Persons producing the Technical Service are invited to add definitions to the following list as appropriate.
 
 Term | Definition

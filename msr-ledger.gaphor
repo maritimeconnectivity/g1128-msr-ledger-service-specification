@@ -2567,7 +2567,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>106.0</val>
+<val>114.0</val>
 </width>
 <height>
 <val>92.0</val>
@@ -2639,7 +2639,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>245.0</val>
+<val>258.0</val>
 </width>
 <height>
 <val>232.0</val>
@@ -2852,7 +2852,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 809.84765625, 427.2421875)</val>
 </matrix>
 <points>
-<val>[(-54.64453125, 7.466398699709913), (-417.02345275878906, 8.416179238387144)]</val>
+<val>[(-54.64453125, 7.466398699709913), (-404.02345275878906, 8.416179238387144)]</val>
 </points>
 <head-connection>
 <ref refid="f17dfc73-4638-11ed-9613-d5108ea44cb2"/>
@@ -2966,7 +2966,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>489.0</val>
+<val>518.0</val>
 </width>
 <height>
 <val>92.0</val>
@@ -2989,8 +2989,15 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>0</val>
 </isAbstract>
 <name>
-<val>+ addMsr(in name: string, in url: string, in account: address): &lt;no type&gt;</val>
+<val>addMsr</val>
 </name>
+<ownedParameter>
+<reflist>
+<ref refid="714c77d2-4a31-11ed-aea0-fc3497a8635e"/>
+<ref refid="714c9f0a-4a31-11ed-964b-fc3497a8635e"/>
+<ref refid="714cc622-4a31-11ed-bc1a-fc3497a8635e"/>
+</reflist>
+</ownedParameter>
 </Operation>
 <Class id="088bf499-48a0-11ed-9565-ff7f0007bcc7">
 <name>
@@ -3019,7 +3026,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>756.0</val>
+<val>796.0</val>
 </width>
 <height>
 <val>92.0</val>
@@ -3039,24 +3046,42 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="088bf499-48a0-11ed-9565-ff7f0007bcc7"/>
 </class_>
 <name>
-<val>+ registerServiceInstance(in instance: ServiceInstance, in keywords: List&lt;string&gt;): &lt;no type&gt;</val>
+<val>registerServiceInstance</val>
 </name>
+<ownedParameter>
+<reflist>
+<ref refid="7b133a23-4a31-11ed-bca7-fc3497a8635e"/>
+<ref refid="7b13612e-4a31-11ed-b7d2-fc3497a8635e"/>
+</reflist>
+</ownedParameter>
 </Operation>
 <Operation id="0fd2a84c-48a1-11ed-9b0a-ff7f0007bcc7">
 <class_>
 <ref refid="33190f35-489f-11ed-8005-ff7f0007bcc7"/>
 </class_>
 <name>
-<val>+ deleteMsr(in msrAddress: address): &lt;no type&gt;</val>
+<val>deleteMsr</val>
 </name>
+<ownedParameter>
+<reflist>
+<ref refid="74f16fab-4a31-11ed-96f2-fc3497a8635e"/>
+</reflist>
+</ownedParameter>
 </Operation>
 <Operation id="3f154b81-48a1-11ed-875a-ff7f0007bcc7">
 <class_>
 <ref refid="088bf499-48a0-11ed-9565-ff7f0007bcc7"/>
 </class_>
 <name>
-<val>+ changeInstanceStatus(in instanceMrn: string, in instanceVersion: string, in status: InstanceStatus): &lt;no type&gt;</val>
+<val>changeInstanceStatus</val>
 </name>
+<ownedParameter>
+<reflist>
+<ref refid="7f58f701-4a31-11ed-a35c-fc3497a8635e"/>
+<ref refid="7f590ac8-4a31-11ed-8600-fc3497a8635e"/>
+<ref refid="7f59321b-4a31-11ed-b799-fc3497a8635e"/>
+</reflist>
+</ownedParameter>
 </Operation>
 <Class id="634f6f9d-48a1-11ed-aec9-ff7f0007bcc7">
 <name>
@@ -3088,7 +3113,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>669.0</val>
+<val>698.0</val>
 </width>
 <height>
 <val>152.0</val>
@@ -3120,12 +3145,24 @@ existing classes or even new classes with specific responsibilities.</val>
 <direction>
 <val>return</val>
 </direction>
+<lowerValue>
+<val>0</val>
+</lowerValue>
+<lowerValue>
+<val>0</val>
+</lowerValue>
 <ownerFormalParam>
 <ref refid="77b56178-48a1-11ed-bb76-ff7f0007bcc7"/>
 </ownerFormalParam>
 <typeValue>
-<val>List&lt;Msr&gt;</val>
+<val>Msr</val>
 </typeValue>
+<upperValue>
+<val>*</val>
+</upperValue>
+<upperValue>
+<val>*</val>
+</upperValue>
 </Parameter>
 <Operation id="b93e1123-48a1-11ed-9f55-ff7f0007bcc7">
 <class_>
@@ -3198,12 +3235,24 @@ existing classes or even new classes with specific responsibilities.</val>
 <direction>
 <val>return</val>
 </direction>
+<lowerValue>
+<val>0</val>
+</lowerValue>
+<lowerValue>
+<val>0</val>
+</lowerValue>
 <ownerFormalParam>
 <ref refid="cbaf7b12-48a1-11ed-a748-ff7f0007bcc7"/>
 </ownerFormalParam>
 <typeValue>
-<val>List&lt;ServiceInstance&gt;</val>
+<val>ServiceInstance</val>
 </typeValue>
+<upperValue>
+<val>*</val>
+</upperValue>
+<upperValue>
+<val>*</val>
+</upperValue>
 </Parameter>
 <Operation id="ec459fbf-48a1-11ed-96da-ff7f0007bcc7">
 <class_>
@@ -3223,12 +3272,24 @@ existing classes or even new classes with specific responsibilities.</val>
 <direction>
 <val>return</val>
 </direction>
+<lowerValue>
+<val>0</val>
+</lowerValue>
+<lowerValue>
+<val>0</val>
+</lowerValue>
 <ownerFormalParam>
 <ref refid="ec459fbf-48a1-11ed-96da-ff7f0007bcc7"/>
 </ownerFormalParam>
 <typeValue>
-<val>List&lt;ServiceInstance&gt;</val>
+<val>ServiceInstance</val>
 </typeValue>
+<upperValue>
+<val>*</val>
+</upperValue>
+<upperValue>
+<val>*</val>
+</upperValue>
 </Parameter>
 <Parameter id="ec480232-48a1-11ed-a07c-ff7f0007bcc7">
 <direction>
@@ -3291,12 +3352,24 @@ existing classes or even new classes with specific responsibilities.</val>
 <direction>
 <val>return</val>
 </direction>
+<lowerValue>
+<val>0</val>
+</lowerValue>
+<lowerValue>
+<val>0</val>
+</lowerValue>
 <ownerFormalParam>
 <ref refid="19dd4cd4-48a2-11ed-97b2-ff7f0007bcc7"/>
 </ownerFormalParam>
 <typeValue>
-<val>List&lt;ServiceInstance&gt;</val>
+<val>ServiceInstance</val>
 </typeValue>
+<upperValue>
+<val>*</val>
+</upperValue>
+<upperValue>
+<val>*</val>
+</upperValue>
 </Parameter>
 <Class id="add8d850-48a3-11ed-8a08-ff7f0007bcc7">
 <name>
@@ -3366,7 +3439,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 1392.546875, 291.8729394545484)</val>
 </matrix>
 <points>
-<val>[(-33.46875, 0.26433456421830215), (-33.46875, -2.60315709785106), (-369.6953430175781, -2.60315709785106)]</val>
+<val>[(-33.46875, 0.26433456421830215), (-33.46875, -2.60315709785106), (-340.6953430175781, -2.60315709785106)]</val>
 </points>
 <head-connection>
 <ref refid="add9bd46-48a3-11ed-9932-ff7f0007bcc7"/>
@@ -3441,7 +3514,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 1413.73828125, 294.1502832045484)</val>
 </matrix>
 <points>
-<val>[(-1.38671875, 24.908295286662565), (-1.38671875, 515.3333172642255), (-300.8867492675781, 515.3333172642255)]</val>
+<val>[(-1.38671875, 24.908295286662565), (-1.38671875, 515.3333172642255), (-271.8867492675781, 515.3333172642255)]</val>
 </points>
 <head-connection>
 <ref refid="add9bd46-48a3-11ed-9932-ff7f0007bcc7"/>
@@ -3519,7 +3592,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>132.0</val>
+<val>149.0</val>
 </width>
 <height>
 <val>60.0</val>
@@ -3560,7 +3633,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 164.12501525878906, 807.4051235378644)</val>
 </matrix>
 <points>
-<val>[(50.75389862060547, 8.784961363206548), (50.75389862060547, 12.337419196300061), (279.7265167236328, 12.337419196300061)]</val>
+<val>[(67.75389862060547, 8.784961363206548), (67.75389862060547, 12.337419196300061), (279.7265167236328, 12.337419196300061)]</val>
 </points>
 <head-connection>
 <ref refid="35814320-48a4-11ed-b4c8-ff7f0007bcc7"/>
@@ -3807,4 +3880,142 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="634f6f9d-48a1-11ed-aec9-ff7f0007bcc7"/>
 </type>
 </Property>
+<Parameter id="714c77d2-4a31-11ed-aea0-fc3497a8635e">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>name</val>
+</name>
+<ownerFormalParam>
+<ref refid="a0426208-489f-11ed-b12c-ff7f0007bcc7"/>
+</ownerFormalParam>
+<typeValue>
+<val>string</val>
+</typeValue>
+</Parameter>
+<Parameter id="714c9f0a-4a31-11ed-964b-fc3497a8635e">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>url</val>
+</name>
+<ownerFormalParam>
+<ref refid="a0426208-489f-11ed-b12c-ff7f0007bcc7"/>
+</ownerFormalParam>
+<typeValue>
+<val>string</val>
+</typeValue>
+</Parameter>
+<Parameter id="714cc622-4a31-11ed-bc1a-fc3497a8635e">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>account</val>
+</name>
+<ownerFormalParam>
+<ref refid="a0426208-489f-11ed-b12c-ff7f0007bcc7"/>
+</ownerFormalParam>
+<typeValue>
+<val>address</val>
+</typeValue>
+</Parameter>
+<Parameter id="74f16fab-4a31-11ed-96f2-fc3497a8635e">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>msrAddress</val>
+</name>
+<ownerFormalParam>
+<ref refid="0fd2a84c-48a1-11ed-9b0a-ff7f0007bcc7"/>
+</ownerFormalParam>
+<typeValue>
+<val>address</val>
+</typeValue>
+</Parameter>
+<Parameter id="7b133a23-4a31-11ed-bca7-fc3497a8635e">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>instance</val>
+</name>
+<ownerFormalParam>
+<ref refid="e024c36f-48a0-11ed-bc74-ff7f0007bcc7"/>
+</ownerFormalParam>
+<typeValue>
+<val>ServiceInstance</val>
+</typeValue>
+</Parameter>
+<Parameter id="7b13612e-4a31-11ed-b7d2-fc3497a8635e">
+<direction>
+<val>in</val>
+</direction>
+<lowerValue>
+<val>0</val>
+</lowerValue>
+<lowerValue>
+<val>0</val>
+</lowerValue>
+<name>
+<val>keywords</val>
+</name>
+<ownerFormalParam>
+<ref refid="e024c36f-48a0-11ed-bc74-ff7f0007bcc7"/>
+</ownerFormalParam>
+<typeValue>
+<val>string</val>
+</typeValue>
+<upperValue>
+<val>*</val>
+</upperValue>
+<upperValue>
+<val>*</val>
+</upperValue>
+</Parameter>
+<Parameter id="7f58f701-4a31-11ed-a35c-fc3497a8635e">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>instanceMrn</val>
+</name>
+<ownerFormalParam>
+<ref refid="3f154b81-48a1-11ed-875a-ff7f0007bcc7"/>
+</ownerFormalParam>
+<typeValue>
+<val>string</val>
+</typeValue>
+</Parameter>
+<Parameter id="7f590ac8-4a31-11ed-8600-fc3497a8635e">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>instanceVersion</val>
+</name>
+<ownerFormalParam>
+<ref refid="3f154b81-48a1-11ed-875a-ff7f0007bcc7"/>
+</ownerFormalParam>
+<typeValue>
+<val>string</val>
+</typeValue>
+</Parameter>
+<Parameter id="7f59321b-4a31-11ed-b799-fc3497a8635e">
+<direction>
+<val>in</val>
+</direction>
+<name>
+<val>status</val>
+</name>
+<ownerFormalParam>
+<ref refid="3f154b81-48a1-11ed-875a-ff7f0007bcc7"/>
+</ownerFormalParam>
+<typeValue>
+<val>InstanceStatus</val>
+</typeValue>
+</Parameter>
 </gaphor>
