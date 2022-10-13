@@ -187,6 +187,43 @@ If the service data model is related to an external data model (e.g. being a sub
 The table below is an example for describing a service data model including traces to an external model.
 -->
 
+## Msr
+
+The *Msr* type is a representation of an MSR instance that is registered in the MSR Global Ledger and has permissions to register and update service instances.
+
+| Attribute | Type | Description |
+| ----- | --- | --------- |
+| name | string | The name of the MSR instance represented |
+| url | string | The URL of the API of the MSR instance represented |
+
+## InstanceStatus
+
+The *InstanceStatus* type is an enumeration that has values for the different possibilities for the operation status of a service instance according to G-1128.[@g1128]
+
+| Attribute | Type | Description |
+| ----- | --- | --------- |
+| Provisional | element | Corresponds to PROVISIONAL in G-1128 |
+| Released | element | Corresponds to RELEASED in G-1128 |
+| Deprecated | element | Corresponds to DEPRECATED in G-1128 |
+| Deleted | element | Corresponds to DELETED in G-1128 |
+
+## ServiceInstance
+
+The *ServiceInstance* type is a representation of a reference to a service instance that is registered in a specific MSR.
+
+| Attribute | Type | Description |
+| ----- | --- | --------- |
+| name | string | The name of the service instance |
+| mrn | string | The MRN of the service instance |
+| version | string | The version of the service instance |
+| keywords | string | The keywords that the service instance is indexed by represented as a single string where the individual keywords are comma separated |
+| coverageArea | string | The geographical coverage area that the service instance covers represented as a string which is formatted according to either UN/LOCODE or WKT |
+| status | InstanceStatus | The operation status of the service instance |
+| implementsDesignMRN | string | The MRN of the service design that the service instance implements |
+| implementsDesignVersion | string | The version of the service design that the service instance implements |
+| msrName | string | The name of the MSR instance that service instance is registered in |
+| msrUrl | string | The URL of the API of the MSR instance that the service instance is registered in |
+
 # Service interface specifications
 
 This section describes the details of each service interface. One sub-section is provided for each Service Interface.
@@ -242,7 +279,7 @@ Note: While the descriptions provided in the service data model shall explain th
 
 ### Operation *deleteMsr*
 
-The purpose of the *deleteMsr* operation is to allow administrators of the MSR Global Ledger to delete previously added MSR instances from the internal index and also revoke their permission to register service instances.
+The purpose of the *deleteMsr* operation is to allow administrators of the MSR Global Ledger to delete previously added MSR instances from the internal index and also revoke their permission to register service instances. In addition to the previous the MSR Global Ledger will also update all service instances that were registered by the deleted MSR instance with the *status* attribute set to **Deleted**.
 
 #### Operation functionality
 
