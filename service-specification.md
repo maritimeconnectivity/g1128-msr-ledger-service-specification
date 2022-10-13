@@ -46,7 +46,7 @@ but services without the G-1128 documentation also can be registered.
 
 ## Purpose
 
-The MSR Gl
+The purpose of the MSR Global Ledger service is to act as an auxiliary extension to the MSR for enabling global service discoverability by allowing different MSR instances to register information about service instances that are registered in the individual MSR instances that service consumers can then use to find out which MSR to contact to get the actual service endpoint for a service instance.
 
 ## Intended readership
 
@@ -56,7 +56,7 @@ This section shall describe the intended readers. e.g.: -->
 
 This service specification is intended to be read by service architects, system engineers and developers in charge of designing and developing an instance of the MCP Service Registry Global Ledger service.
 
-Furthermore, this service specification is intended to be read by enterprise architects, service architects, information architects, system engineers and developers in pursuing architecting, design and development activities of other related services.
+Furthermore, this service specification is intended to be read by enterprise architects, service architects, information architects, system engineers and developers in pursuing architecture, design and development activities of other related services.
 
 ## Inputs from other sources
 <!--
@@ -230,13 +230,13 @@ Figure 3 shows an example of a UML diagram (subset of the service data model, re
 It is mandatory to provide a table with a clear description of each service operation parameter and the information about which data types defined in the service data mode are used by the service operation in its input and output parameters.
 Note: While the descriptions provided in the service data model shall explain the data types in a neutral format, the descriptions provided here shall explicitly explain the purpose of the parameters for the operation.
 -->
-| Parameter (in) | Encoding | Mult. | Description |
+| Parameter (in) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 | name | string | 1 | The name of the MSR that is to be added |
 | url | string | 1 | The URL of the API of the MSR that is to be added |
 | account | address | 1 | The account address in the MSR Ledger of the MSR that is to be added |
 
-| Return Type (out) | Encoding | Mult. | Description |
+| Return Type (out) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 | result from operation | none \| string | 1 | The result of the add operation. Will be empty if successful, else it will contain the failure reason as a string |
 
@@ -251,11 +251,11 @@ If the user does have the necessary permissions, the MSR Ledger will delete the 
 
 #### Operation parameters
 
-| Parameter (in) | Encoding | Mult. | Description |
+| Parameter (in) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 | msrAddress | address | 1 | The account address of the MSR that is to be deleted |
 
-| Return Type (out) | Encoding | Mult. | Description |
+| Return Type (out) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 | result from operation | none \| string | 1 | The result of the delete operation. Will be empty if successful, else it will contain the failure reason as a string |
 
@@ -274,12 +274,12 @@ If the MSR does have the necessary permissions, the MSR Ledger will update the r
 
 #### Operation parameters
 
-| Parameter (in) | Encoding | Mult. | Description |
+| Parameter (in) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 | instance | ServiceInstance | 1 | The service instance that should be registered |
 | keywords | string | 0..* | A list of keywords that the service instance should be indexed by |
 
-| Return Type (out) | Encoding | Mult. | Description |
+| Return Type (out) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 | result from operation | none \| string | 1 | The result of the registering operation. Will be empty if successful, else it will contain the failure reason as a string |
 
@@ -294,13 +294,13 @@ If the checks succeed, the MSR Ledger will update the service instance in questi
 
 #### Operation parameters
 
-| Parameter (in) | Encoding | Mult. | Description |
+| Parameter (in) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 | instanceMrn | string | 1 | The MRN of the service instance that is to be updated |
 | instanceVersion | string | 1 | The version of the service instance that is to be updated |
 | status | InstanceStatus | 1 | The instance status that the service instance is to updated with |
 
-| Return Type (out) | Encoding | Mult. | Description |
+| Return Type (out) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 | result from operation | none \| string | 1 | The result of the registering operation. Will be empty if successful, else it will contain the failure reason as a string |
 
@@ -318,12 +318,12 @@ Upon receiving a request to get the list of MSR instances the MSR Ledger will re
 
 #### Operation parameters
 
-| Parameter (in) | Encoding | Mult. | Description |
+| Parameter (in) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 
-| Return Type (out) | Encoding | Mult. | Description |
+| Return Type (out) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
-| Msr | binary | 0..* | The list of MSR instances that are registered in the MSR Global Ledger |
+| result from operation | Msr | 0..* | The list of MSR instances that are registered in the MSR Global Ledger |
 
 ### Operation *getServiceInstance*
 
@@ -335,14 +335,14 @@ Upon receiving a request for getting a service instance, the MSR Global Ledger w
 
 #### Operation parameters
 
-| Parameter (in) | Encoding | Mult. | Description |
+| Parameter (in) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 | instanceMrn | string | 1 | The MRN of the service instance to be returned|
 | version | string | 1 | The version of the service instance to be returned |
 
-| Return Type (out) | Encoding | Mult. | Description |
+| Return Type (out) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
-| ServiceInstance | binary | 1 | The service instance that was found based on the given parameters |
+| result from operation | ServiceInstance | 1 | The service instance that was found based on the given parameters |
 
 ### Operation *getServiceInstances*
 
@@ -354,12 +354,12 @@ Upon receiving a request to get the list of service instances, the MSR Ledger wi
 
 #### Operation parameters
 
-| Parameter (in) | Encoding | Mult. | Description |
+| Parameter (in) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 
-| Return Type (out) | Encoding | Mult. | Description |
+| Return Type (out) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
-| ServiceInstance | binary | 0..* | The list of all service instances that are registered in the MSR Global Ledger |
+| result from operation | ServiceInstance | 0..* | The list of all service instances that are registered in the MSR Global Ledger |
 
 ### Operation *getServiceInstancesByKeyword*
 
@@ -371,17 +371,17 @@ Upon receiving a request for getting service instances by a keyword, the MSR Glo
 
 #### Operation parameters
 
-| Parameter (in) | Encoding | Mult. | Description |
+| Parameter (in) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 | keyword | string | 1 | The keyword that will be used to find service instances |
 
-| Return Type (out) | Encoding | Mult. | Description |
+| Return Type (out) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
-| ServiceInstance | binary | 0..* | The list that contains all the registered service instances that have the given keyword |
+| result from operation | ServiceInstance | 0..* | The list that contains all the registered service instances that have the given keyword |
 
 ### Operation *getServiceInstancesByDesign*
 
-The *getServiceInstancesByDesign* operation allows service consumers to get the list of service instances that implement a given service design. **MAKE REFERENCE TO G1128 HERE**
+The *getServiceInstancesByDesign* operation allows service consumers to get the list of service instances that implement a given service design. <!--**MAKE REFERENCE TO G1128 HERE**-->
 
 #### Operation functionality
 
@@ -389,14 +389,14 @@ Upon receiving a request to the list of service instances that implement a given
 
 #### Operation parameters
 
-| Parameter (in) | Encoding | Mult. | Description |
+| Parameter (in) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
 | designMRN | string | 1 | The MRN of the service design that the service instances implement |
 | designVersion | string | 1 | The version of the service design that the service instance implement |
 
-| Return Type (out) | Encoding | Mult. | Description |
+| Return Type (out) | Type | Mult. | Description |
 | ------ | --- | --- | --------- |
-| ServiceInstance | binary | 0..* | The list that contains all the registered service instances that implement the given design MRN and version |
+| result from operation | ServiceInstance | 0..* | The list that contains all the registered service instances that implement the given design MRN and version |
 
 # Service dynamic behaviour
 <!--
