@@ -159,15 +159,17 @@ It is also recommended to describe the considerations resulting in the selection
 A service interface supports one or several service operations. Depending on the message exchange pattern, service operations are either to be implemented by the service provider (e.g. in a Request/Response MEP, query operations are provided by the service provider – the service consumer uses them in order to submit query requests to the service provider), or by the service consumer (e.g. in a Publish/Subscribe MEP, publication operations are provided by the service consumer – the service provider uses them to submit publications to the service consumer). This distinction shall be clearly visualised in a service interface table (see example below): for each service interface, it shall be stated whether it is either provided or used by the Service. A service provides at least one service interface.
 An example diagram and corresponding table is given below.
 -->
-This section describes the interfaces of the service including the selected Message Exchange Pattern (MEP) by using UML diagrams that illustrate the service interfaces definitions and operations and in tabular form.
+This section describes the interfaces of the service including the selected Message Exchange Pattern (MEP) by using UML diagrams that illustrate the service interfaces definitions and operations and in tabular form. A UML diagram showing all the service interfaces of the service can be seen in [@fig:interfaces].
 
-![MSR Global Ledger Interface Definition Diagram](materials/Service-Interfaces.svg)
+![MSR Global Ledger Interface Definition Diagram](materials/Service-Interfaces.svg){#fig:interfaces}
 
 Service Interface | Role (from service provider point of view) | Service Operation
 | --- | --- | --- |
 | MsrAdminInterface        | Provided | addMsr \newline deleteMsr |
 | MsrInterface             | Provided | registerServiceInstance \newline changeInstanceStatus |
 | ServiceConsumerInterface | Provided | getMsrs \newline getServiceInstance \newline getServiceInstances \newline getServiceInstancesByKeyword \newline getServiceInstancesByDesign |
+
+\newpage
 
 # Service data model
 
@@ -177,7 +179,7 @@ This section describes the information model, i.e., the logical data structures 
 It is recommended to visualise the data structures by using UML diagrams.  The full information model (logical data structure) shall be shown using diagram(s) and explanatory tables (see below).
 -->
 
-![UML class diagram of data model](materials/msr-ledger-data-model.svg){ width=500px }
+![UML class diagram of data model](materials/msr-ledger-data-model.svg){ width=400px }
 
 <!--
 It is mandatory to give a description of each entity item (class), its attributes and the associations between entity items after each diagram showing data items.
@@ -186,6 +188,8 @@ If the service data model is related to an external data model (e.g. being a sub
 
 The table below is an example for describing a service data model including traces to an external model.
 -->
+
+\newpage
 
 ## Msr
 
@@ -378,7 +382,7 @@ Upon receiving a request for getting a service instance, the MSR Global Ledger w
 | version | string | 1 | The version of the service instance to be returned |
 
 | Return Type (out) | Type | Mult. | Description |
-| ------ | --- | --- | --------- |
+| ------ | ----- | --- | --------- |
 | result from operation | ServiceInstance | 1 | The service instance that was found based on the given parameters |
 
 ### Operation *getServiceInstances*
@@ -395,7 +399,7 @@ Upon receiving a request to get the list of service instances, the MSR Ledger wi
 | ------ | --- | --- | --------- |
 
 | Return Type (out) | Type | Mult. | Description |
-| ------ | --- | --- | --------- |
+| ------ | ----- | --- | --------- |
 | result from operation | ServiceInstance | 0..* | The list of all service instances that are registered in the MSR Global Ledger |
 
 ### Operation *getServiceInstancesByKeyword*
@@ -413,7 +417,7 @@ Upon receiving a request for getting service instances by a keyword, the MSR Glo
 | keyword | string | 1 | The keyword that will be used to find service instances |
 
 | Return Type (out) | Type | Mult. | Description |
-| ------ | --- | --- | --------- |
+| ------ | ----- | --- | --------- |
 | result from operation | ServiceInstance | 0..* | The list that contains all the registered service instances that have the given keyword |
 
 ### Operation *getServiceInstancesByDesign*
@@ -432,7 +436,7 @@ Upon receiving a request to the list of service instances that implement a given
 | designVersion | string | 1 | The version of the service design that the service instance implement |
 
 | Return Type (out) | Type | Mult. | Description |
-| ------ | --- | --- | --------- |
+| ------ | ----- | --- | --------- |
 | result from operation | ServiceInstance | 0..* | The list that contains all the registered service instances that implement the given design MRN and version |
 
 # Service dynamic behaviour
@@ -448,19 +452,18 @@ Following types of views and UML diagrams can be used to describe the dynamic be
 -->
 A description should be given.
 
-## Service interface INTERFACE NAME
+## Service interface *MsrAdminInterface*
 <!--
 Include some information about the dynamic aspects of the service interface; each operation shall be exposed on at least one diagram.
 An example sequence diagram is shown in Figure 4.
 -->
 A description should be given.
 
-## Service orchestration (Optional)
-<!--
-This section shall be provided, if the composition of the service and/or the relation to other services (e.g., which other services are used to provide this service; which other services are intended to use this service) is deemed relevant for the service specification.
-An example sequence diagram is given below. This very simple example indicates that the AddressForPersionLookupService (i.e., the service that is being described in this Service Specification Document) acts as a consumer of a “notifyAddressChange” operation of another service, called “AddressForPersionService”. Note that the other service needs to be described by its own Service Specification Document; a reference to that document shall be added here).
--->
-A description should be given.
+![MSR Admin Interface Operation Sequence Diagram](materials/msr-admin-interface.pdf)
+
+## Service Interface *MsrInterface*
+
+![MSR Interface Operation Sequence Diagram](materials/msr-interface.pdf)
 
 # Service provisioning (Optional)
 
@@ -486,5 +489,7 @@ MCP  | Maritime Connectivity Platform
 MIR  | Maritime Identity Registry
 MRN  | Maritime Resource Name
 MSR  | Maritime Service Registry
+
+\newpage
 
 # References

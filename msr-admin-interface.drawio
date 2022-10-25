@@ -1,0 +1,48 @@
+<mxfile host="65bd71144e">
+    <diagram id="mjiTLWvq4TW4KRu9k5GE" name="Page-1">
+        <mxGraphModel dx="1441" dy="1126" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="JVCltEmBj6A9z7wbU5OE-1" value="Msr Admin" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="200" width="100" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVCltEmBj6A9z7wbU5OE-3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="JVCltEmBj6A9z7wbU5OE-1" vertex="1">
+                    <mxGeometry x="45" y="80" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVCltEmBj6A9z7wbU5OE-8" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="JVCltEmBj6A9z7wbU5OE-1" vertex="1">
+                    <mxGeometry x="45" y="160" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVCltEmBj6A9z7wbU5OE-2" value="Ledger: MsrAdminInterface" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="200" width="120" height="210" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVCltEmBj6A9z7wbU5OE-4" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="JVCltEmBj6A9z7wbU5OE-2" vertex="1">
+                    <mxGeometry x="55" y="80" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVCltEmBj6A9z7wbU5OE-9" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="JVCltEmBj6A9z7wbU5OE-2" vertex="1">
+                    <mxGeometry x="55" y="160" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="JVCltEmBj6A9z7wbU5OE-5" value="addMsr(name, url, account)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" source="JVCltEmBj6A9z7wbU5OE-1" target="JVCltEmBj6A9z7wbU5OE-4" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="420" y="280" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="JVCltEmBj6A9z7wbU5OE-6" value="response: void" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;rounded=0;" parent="1" source="JVCltEmBj6A9z7wbU5OE-4" target="JVCltEmBj6A9z7wbU5OE-3" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="420" y="356" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="JVCltEmBj6A9z7wbU5OE-10" value="deleteMsr(msrAddress)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0;entryY=0;rounded=0;" parent="1" source="JVCltEmBj6A9z7wbU5OE-1" target="JVCltEmBj6A9z7wbU5OE-9" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="420" y="360" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="JVCltEmBj6A9z7wbU5OE-11" value="response: void" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0;exitY=0.95;rounded=0;" parent="1" source="JVCltEmBj6A9z7wbU5OE-9" target="JVCltEmBj6A9z7wbU5OE-8" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="420" y="436" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

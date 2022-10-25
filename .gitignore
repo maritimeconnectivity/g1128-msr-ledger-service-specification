@@ -1,2 +1,4 @@
 .DS_Store
-*.pdf
+*.bkp
+*.dtmp
+service-specification.pdf
