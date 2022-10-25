@@ -4,7 +4,7 @@ toc: true
 toc-own-page: true
 title: "Service specification for the MCP Service Registry Global Ledger"
 author: [MCP Consortium]
-date: "2022-08-10"
+date: \today
 keywords: [Maritime technical service, MCP, Service registry, global ledger]
 logo: "materials/mcplogo.png"
 titlepage-text-color: "476E7D"
@@ -464,6 +464,10 @@ A description should be given.
 ## Service Interface *MsrInterface*
 
 ![MSR Interface Operation Sequence Diagram](materials/msr-interface.pdf)
+
+## Service Interface *ServiceConsumerInterface*
+
+![Service Consumer Interface Operation Sequence Diagram](materials/service-consumer-interface.pdf)
 
 # Service provisioning (Optional)
 
