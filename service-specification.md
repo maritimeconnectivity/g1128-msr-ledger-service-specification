@@ -68,6 +68,8 @@ Keywords     | service, registry, discoverability, specification, G-1128, techni
 Architect(s) | MCC MSR WG
 Status       | Provisional
 
+\newpage
+
 # Operational context
 
 This section describes the context of the service from an operational perspective.
