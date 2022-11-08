@@ -108,22 +108,12 @@ MSR-FR001 | Service Reference Registration | Allow the registration of a new ref
 MSR-FR002 | Service Reference Update | Allow updates of existing service instance references. | MCC MSR WG
 MSR-FR003 | Global Service Discoverability | Allow services to be globally discoverable across several different MSRs. | MCC MSR WG
 
-#### Requirement definitions - XYZ-FR003
-
-Requirement Id | Requirement Name
---- | ---
-Requirement Name |
-Requirement Text |
-Rationale |
-Author |
-
 ### Non-functional requirements
 
 Requirement Id | Requirement Name | Requirement Text | References
 --- | --- | --- | ---
 MSR-NFR001 | Authenticity | The service consumer must be able to verify the authenticity of the received data. | MCC MSR WG
 MSR-NFR002 | Integrity | The service consumer must be able to verify that the received data has not been tampered with. | MCC MSR WG
-MSR-NFR003 | something | something | something
 
 # Service overview
 <!--
@@ -231,7 +221,7 @@ Architectural elements applicable for this description are:
 A Service may have one or more Service Interfaces.  Please describe each in separate sections below.
 -->
 
-## Service interface *MsrAdminInterface*
+## Service interface *MsrAdminInterface* {#sec:msradmin}
 <!--
 Please explain the purpose, message exchange pattern and architecture of the Interface.
 A Service Interface supports one or several service operations.  Each operation in the service interface shall be described in the following sections.
@@ -290,7 +280,7 @@ If the user does have the necessary permissions, the MSR Ledger will delete the 
 | ------ | --- | --- | --------- |
 | result from operation | none \| string | 1 | The result of the delete operation. Will be empty if successful, else it will contain the failure reason as a string |
 
-## Service Interface *MsrInterface*
+## Service Interface *MsrInterface* {#sec:msrinterface}
 
 The *MsrInterface* interface is used by MSR instances, that have necessary permissions, to register and change the status of service instances.
 
@@ -335,7 +325,7 @@ If the checks succeed, the MSR Ledger will update the service instance in questi
 | ------ | --- | --- | --------- |
 | result from operation | none \| string | 1 | The result of the registering operation. Will be empty if successful, else it will contain the failure reason as a string |
 
-## Service interface *ServiceConsumerInterface*
+## Service interface *ServiceConsumerInterface* {#sec:consumerinterface}
 
 The *ServiceConsumerInterface* interface is used by service consumers to get the list of MSR instances that are registered and to get registered service instances.
 
@@ -442,22 +432,27 @@ Following types of views and UML diagrams can be used to describe the dynamic be
 -->
 A description should be given.
 
-## Service interface *MsrAdminInterface*
+## Service interface *MsrAdminInterface* {#sec:msradmindyn}
 <!--
 Include some information about the dynamic aspects of the service interface; each operation shall be exposed on at least one diagram.
 An example sequence diagram is shown in Figure 4.
 -->
-A description should be given.
+As described in [@sec:msradmin], MsrAdminInterface contains functions for adding and deleting MSR instances in the Global Ledger.\
+As shown in [@fig:msradmin] an MSR needs to be added before it can be deleted.
 
-![MSR Admin Interface Operation Sequence Diagram](materials/msr-admin-interface.pdf)
+![MSR Admin Interface Operation Sequence Diagram](materials/msr-admin-interface.pdf){#fig:msradmin}
 
 ## Service Interface *MsrInterface*
 
-![MSR Interface Operation Sequence Diagram](materials/msr-interface.pdf)
+The dynamic behaviour of the MsrInterface (see [@sec:msrinterface]) is shown in [@fig:msrinterface]. As seen, a specific MSR instance needs to be registered by an MSR admin in the MsrAdminInterface (see [@sec:msradmindyn]) before it is allowed to register service instances in the Global Ledger. Additionally, a service instance needs to have been registered by an MSR before the same MSR can change its instance status.
+
+![MSR Interface Operation Sequence Diagram](materials/msr-interface.pdf){#fig:msrinterface}
 
 ## Service Interface *ServiceConsumerInterface*
 
-![Service Consumer Interface Operation Sequence Diagram](materials/service-consumer-interface.pdf)
+As described in [@sec:consumerinterface], ServiceConsumerInterface contains functions that can be used by service consumers for global service discoverability. The sequence diagram shown in [@fig:consumerinterface] shows the dynamic behaviour of the functions of the interface. The shown order of operations should not be considered as required, as any of the functions can be called at any time.
+
+![Service Consumer Interface Operation Sequence Diagram](materials/service-consumer-interface.pdf){#fig:consumerinterface}
 
 # Service provisioning (Optional)
 
