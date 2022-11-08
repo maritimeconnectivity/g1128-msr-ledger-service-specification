@@ -127,7 +127,7 @@ Architectural elements applicable for this description are:
 
 The above elements may be depicted in one or more diagrams.  Which and how many diagrams are needed depends on the chosen architecture description framework and complexity of the service.
 -->
-A description should be given.
+This section aims at providing an overview of the main elements of the service.
 
 ## Service interfaces
 
@@ -402,7 +402,7 @@ Upon receiving a request for getting service instances by a keyword, the MSR Glo
 
 ### Operation *getServiceInstancesByDesign*
 
-The *getServiceInstancesByDesign* operation allows service consumers to get the list of service instances that implement a given service design. <!--**MAKE REFERENCE TO G1128 HERE**-->
+The *getServiceInstancesByDesign* operation allows service consumers to get the list of service instances that implement a given service design.
 
 #### Operation functionality
 
@@ -430,7 +430,7 @@ Following types of views and UML diagrams can be used to describe the dynamic be
 * Interaction diagrams;
 * State machine diagrams.
 -->
-A description should be given.
+This section describes the interactive behaviour between service interfaces (interaction specification).
 
 ## Service interface *MsrAdminInterface* {#sec:msradmindyn}
 <!--
