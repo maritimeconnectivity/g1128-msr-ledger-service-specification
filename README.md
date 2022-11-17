@@ -1,4 +1,4 @@
-# An alternative way to describe a IALA's G1128 service specification 
+# An alternative way to describe a IALA's G1128 service specification
 
 You can collaborate on the service-specification.md file for the specification then the repository will turn the file into a nicely-formatted pdf for you.
 
@@ -9,6 +9,14 @@ The up-to-date pdf file can be found at the release page.
 *service-specification.md* file in the root is the working document that you need to fill in every sections being required.
 
 The given document template follows the [IALA's G1128 service specification format](https://www.iala-aism.org/product/g1128-specification-e-navigation-technical-services/).
+
+## How to compile
+
+To compile the document you will first need to have pandoc, pandoc-crossref and a LaTeX distribution installed. After that you can use the following command to compile:
+
+```sh
+pandoc service-specification.md -o service-specification.pdf -s -F pandoc-crossref --from=markdown --template=eisvogel --number-sections --data-dir=public/ --citeproc
+```
 
 ## Release versioning
 
@@ -24,4 +32,3 @@ For updating the minor element, put *(MINOR)* at the end of a commit message.
 As well as the minor element, put *(MAJOR)* at the end of a commit message for major versioning updates.
 
 You can read more details about the versioning from [Git-based symantic versioning](https://github.com/PaulHatch/semantic-version) which is used in the GitHub action of this repository.
-
